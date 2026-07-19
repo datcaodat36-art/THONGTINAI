@@ -145,3 +145,26 @@ nav a{
 }
 
 }
+.category{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.category h2{
+margin-bottom:25px;
+font-size:32px;
+}
+
+.card a{
+display:inline-block;
+margin-top:15px;
+color:#2563eb;
+text-decoration:none;
+font-weight:bold;
+}
+
+.card a:hover{
+text-decoration:underline;
+}

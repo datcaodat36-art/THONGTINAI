@@ -3,159 +3,369 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>THÔNG TIN AI | Khám phá Trí tuệ nhân tạo</title>
+    <title>THÔNG TIN AI</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<header>
+    <!-- HEADER -->
 
-<div class="logo">
+    <header class="header">
 
-🤖 THÔNG TIN AI
+        <div class="logo">
 
-</div>
+            THÔNG TIN AI
 
-<nav>
+        </div>
 
-<a href="#">Trang chủ</a>
+        <nav>
 
-<a href="#">AI</a>
+            <a href="#" id="homeToggle" data-i18n="nav_home">Trang chủ</a>
 
-<a href="#">Hướng dẫn</a>
+            <a href="#" id="knowledgeToggle" data-i18n="nav_knowledge">Kiến thức AI</a>
 
-<a href="#">Tin tức</a>
+            <a href="#" id="toolsToggle" data-i18n="nav_tools">Công cụ AI</a>
 
-<a href="#">Prompt</a>
+            <a href="#" id="guideToggle" data-i18n="nav_guide">Hướng dẫn</a>
 
-<a href="#">Liên hệ</a>
+        </nav>
 
-</nav>
+        <div class="header-right">
 
-</header>
+            <div class="lang-select">
 
-<section class="hero">
+                <select id="langSelect">
 
-<h1>Khám phá sức mạnh của Trí tuệ nhân tạo</h1>
+                    <option value="vi">🇻🇳 Tiếng Việt</option>
 
-<p>
+                    <option value="en">🇺🇸 English</option>
 
-Website chia sẻ kiến thức AI, hướng dẫn sử dụng,
+                </select>
 
-Prompt và ứng dụng AI trong công việc.
+            </div>
 
-</p>
+            <button id="darkMode">
 
-<input
+                🌙
 
-type="text"
+            </button>
 
-placeholder="Tìm ChatGPT, Gemini, Claude..."
+        </div>
 
->
+    </header>
 
-<button>Tìm kiếm</button>
 
-</section>
 
-<section class="tools">
+    <!-- HERO -->
 
-<h2>Công cụ AI nổi bật</h2>
+    <section class="hero">
 
-<div class="grid">
+        <div class="hero-text">
 
-<div class="card">
+            <h1 data-i18n="hero_title">
 
-<h3>🤖 ChatGPT</h3>
+                Khám phá thế giới AI
 
-<p>Viết nội dung, lập trình, học tập.</p>
+            </h1>
 
-</div>
+            <p data-i18n="hero_desc">
 
-<div class="card">
+                Tổng hợp những công cụ AI tốt nhất cho nhu cầu công việc
 
-<h3>💎 Gemini</h3>
+            </p>
 
-<p>AI của Google.</p>
+            <div class="search-box">
 
-</div>
+                <input id="searchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="Tìm ChatGPT, Gemini, Claude...">
 
-<div class="card">
+                <button id="searchBtn" data-i18n="search_btn">
 
-<h3>🧠 Claude</h3>
+                    Tìm kiếm
 
-<p>Đọc tài liệu dài cực tốt.</p>
+                </button>
 
-</div>
+            </div>
 
-<div class="card">
+        </div>
 
-<h3>⚡ Grok</h3>
+        <!-- CON ROBOT AI TRANG TRÍ GÓC HERO (ảnh CC BY-NC 4.0, nguồn: pngimg.com) -->
+        <img class="hero-robot" src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Robot AI minh hoa">
 
-<p>AI thời gian thực.</p>
+    </section>
 
-</div>
 
-<div class="card">
 
-<h3>🎨 Midjourney</h3>
+    <!-- MAIN -->
 
-<p>Tạo ảnh AI.</p>
+    <main class="main">
 
-</div>
+        <!-- SIDEBAR -->
 
-<div class="card">
+        <aside class="sidebar">
 
-<h3>🎬 Runway</h3>
+            <h3 data-i18n="sidebar_title">
 
-<p>Tạo video AI.</p>
+                Danh mục
 
-</div>
+            </h3>
 
-<div class="card">
+            <ul>
 
-<h3>🎵 Suno</h3>
+                <li data-category="all" data-i18n="cat_all">🔥 Tất cả AI</li>
 
-<p>Tạo nhạc AI.</p>
+                <li data-category="chat" data-i18n="cat_chat">💬 Chat AI</li>
 
-</div>
+                <li data-category="image" data-i18n="cat_image">🎨 AI Hình ảnh</li>
 
-<div class="card">
+                <li data-category="video" data-i18n="cat_video">🎬 AI Video</li>
 
-<h3>📊 Perplexity</h3>
+                <li data-category="code" data-i18n="cat_code">💻 AI Lập trình</li>
 
-<p>Tìm kiếm thông minh.</p>
+                <li data-category="finance" data-i18n="cat_finance">💰 AI Tài chính</li>
 
-</div>
+                <li data-category="study" data-i18n="cat_study">📚 AI Học tập</li>
 
-</div>
+            </ul>
 
-</section>
+            <h3 class="utility-title" data-i18n="utility_title">Tiện ích</h3>
 
-<footer>
+            <ul class="utility-list">
 
-<p>
+                <li data-utility="ranking" data-i18n="util_ranking">🏆 Bảng xếp hạng</li>
 
-© 2026 THONGTINAI
+                <li data-utility="newest" data-i18n="util_newest">🆕 AI mới nhất</li>
 
-</p>
+                <li data-utility="free" data-i18n="util_free">🎁 AI miễn phí</li>
 
-</footer>
+                <li data-utility="profession" data-i18n="util_profession">💼 AI theo nghề</li>
 
-<script src="js/script.js"></script>
+            </ul>
+
+        </aside>
+
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+            <!-- KIẾN THỨC AI (ẩn mặc định, bấm menu mới hiện) -->
+
+            <div id="knowledge-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_knowledge">
+
+                        Kiến thức AI
+
+                    </h2>
+
+                </div>
+
+                <div id="knowledgeContainer" class="knowledge-grid">
+
+                </div>
+
+            </div>
+
+            <!-- HƯỚNG DẪN SỬ DỤNG AI (ẩn mặc định, bấm menu mới hiện) -->
+
+            <div id="guide-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_guide">
+
+                        Hướng dẫn sử dụng AI
+
+                    </h2>
+
+                </div>
+
+                <div id="guideContainer" class="knowledge-grid">
+
+                </div>
+
+            </div>
+
+            <!-- AI THEO NGHỀ (ẩn mặc định, bấm menu tiện ích mới hiện) -->
+
+            <div id="profession-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_profession">
+
+                        AI theo nghề
+
+                    </h2>
+
+                </div>
+
+                <div id="professionContainer" class="profession-grid">
+
+                </div>
+
+            </div>
+
+            <!-- BẢNG XẾP HẠNG AI (ẩn mặc định, bấm menu tiện ích mới hiện) -->
+
+            <div id="ranking-section" class="hidden">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_ranking">
+
+                        Bảng xếp hạng AI
+
+                    </h2>
+
+                    <span class="tool-count" data-i18n="ranking_note">Xếp hạng theo đánh giá người dùng</span>
+
+                </div>
+
+                <div id="rankingContainer" class="ranking-list">
+
+                </div>
+
+            </div>
+
+            <!-- CÔNG CỤ AI -->
+
+            <div id="tool-section">
+
+                <div class="section-title">
+
+                    <h2 data-i18n="section_tools">
+
+                        Công cụ AI nổi bật
+
+                    </h2>
+
+                    <span id="toolCount" class="tool-count"></span>
+
+                </div>
+
+                <div id="toolContainer" class="tool-grid">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- 6 Ô LỢI ÍCH CUỐI TRANG -->
+
+    <section class="footer-stats">
+
+        <div class="stat-box">
+
+            <div class="stat-icon">⏱️</div>
+
+            <h4 data-i18n="stat1_title">Tiết kiệm thời gian</h4>
+
+            <p data-i18n="stat1_desc">Làm việc nhanh hơn với AI</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">📈</div>
+
+            <h4 data-i18n="stat2_title">Nâng cao hiệu suất</h4>
+
+            <p data-i18n="stat2_desc">Hoàn thành nhiều hơn trong thời gian ngắn</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">💰</div>
+
+            <h4 data-i18n="stat3_title">Tăng thu nhập</h4>
+
+            <p data-i18n="stat3_desc">Cơ hội nhiều hơn với công cụ AI</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">🧠</div>
+
+            <h4 data-i18n="stat4_title">Học hỏi nhanh hơn</h4>
+
+            <p data-i18n="stat4_desc">Tiếp cận kiến thức mới dễ dàng hơn</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">🎨</div>
+
+            <h4 data-i18n="stat5_title">Sáng tạo không giới hạn</h4>
+
+            <p data-i18n="stat5_desc">Biến ý tưởng thành hiện thực nhanh chóng</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <div class="stat-icon">🌐</div>
+
+            <h4 data-i18n="stat6_title">Kết nối xu hướng AI</h4>
+
+            <p data-i18n="stat6_desc">Luôn cập nhật công nghệ mới nhất</p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p data-i18n="footer_text">
+
+            © 2026 THÔNG TIN AI
+
+        </p>
+
+        <p class="credit">
+
+            
+
+        </p>
+
+    </footer>
+
+
+
+    <script src="data.js"></script>
+
+    <script src="translations.js"></script>
+
+    <script src="script.js"></script>
 
 </body>
 

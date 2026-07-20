@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết công cụ AI - THÔNG TIN AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">THÔNG TIN AI</a>
+        </div>
+        <nav>
+            <a href="index.html" data-i18n="nav_home">Trang chủ</a>
+            <a href="index.html" id="knowledgeToggle" data-i18n="nav_knowledge">Kiến thức AI</a>
+            <a href="index.html" id="toolsToggle" data-i18n="nav_tools">Công cụ AI</a>
+            <a href="index.html" id="guideToggle" data-i18n="nav_guide">Hướng dẫn</a>
+        </nav>
+        <div class="header-right">
+            <div class="lang-select">
+                <select id="langSelect">
+                    <option value="vi">🇻🇳 Tiếng Việt</option>
+                    <option value="en">🇺🇸 English</option>
+                </select>
+            </div>
+            <button id="darkMode">🌙</button>
+        </div>
+    </header>
+
+    <!-- DETAIL SECTION -->
+    <main class="detail-container">
+        <div class="detail-hero">
+            <button class="back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="back_btn">Quay lại</span>
+            </button>
+        </div>
+
+        <section class="detail-content">
+            <div class="detail-header">
+                <div class="detail-logo">
+                    <img id="detailLogo" src="" alt="Logo">
+                    <span id="detailIcon" class="detail-icon"></span>
+                </div>
+                <div class="detail-title-section">
+                    <h1 id="detailName"></h1>
+                    <div class="detail-meta">
+                        <span id="detailCategory" class="badge-category"></span>
+                        <span id="detailBadge" class="badge"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RATING & FAVORITE SECTION -->
+            <div class="rating-favorite-section">
+                <div class="rating-box">
+                    <h3 data-i18n="rating_title">Đánh giá</h3>
+                    <div class="stars-container">
+                        <div class="stars-display" id="starsDisplay"></div>
+                        <span id="ratingValue" class="rating-value">4.5/5</span>
+                    </div>
+                </div>
+
+                <!-- RATING FILTER 5-1 STAR -->
+                <div class="rating-filter">
+                    <h3 data-i18n="rating_filter">Lọc theo sao</h3>
+                    <div class="filter-stars">
+                        <button class="star-filter-btn" data-star="5">⭐⭐⭐⭐⭐ <span data-i18n="star_5">5 sao</span></button>
+                        <button class="star-filter-btn" data-star="4">⭐⭐⭐⭐ <span data-i18n="star_4">4 sao</span></button>
+                        <button class="star-filter-btn" data-star="3">⭐⭐⭐ <span data-i18n="star_3">3 sao</span></button>
+                        <button class="star-filter-btn" data-star="2">⭐⭐ <span data-i18n="star_2">2 sao</span></button>
+                        <button class="star-filter-btn" data-star="1">⭐ <span data-i18n="star_1">1 sao</span></button>
+                    </div>
+                </div>
+
+                <div class="favorite-box">
+                    <button id="favoriteBtn" class="favorite-btn" title="Yêu thích">
+                        <i class="far fa-heart"></i> <span data-i18n="favorite_btn">Yêu thích</span>
+                    </button>
+                    <p id="favCount" class="fav-count">0 người yêu thích</p>
+                </div>
+            </div>
+
+            <!-- MAIN INFO GRID -->
+            <div class="info-grid">
+                <!-- GIỚI THIỆU -->
+                <div class="info-box">
+                    <h2 data-i18n="detail_intro">Giới thiệu</h2>
+                    <p id="detailIntro"></p>
+                </div>
+
+                <!-- ƯU ĐIỂM -->
+                <div class="info-box">
+                    <h2 data-i18n="detail_advantages">Ưu điểm</h2>
+                    <ul id="advantagesList" class="benefit-list">
+                    </ul>
+                </div>
+
+                <!-- NHƯỢC ĐIỂM -->
+                <div class="info-box">
+                    <h2 data-i18n="detail_disadvantages">Nhược điểm</h2>
+                    <ul id="disadvantagesList" class="benefit-list">
+                    </ul>
+                </div>
+
+                <!-- CÁCH DÙNG -->
+                <div class="info-box">
+                    <h2 data-i18n="detail_usage">Cách dùng</h2>
+                    <ol id="usageList" class="usage-list">
+                    </ol>
+                </div>
+
+                <!-- GIÁ -->
+                <div class="info-box">
+                    <h2 data-i18n="detail_price">Giá</h2>
+                    <div id="priceInfo" class="price-info">
+                    </div>
+                </div>
+
+                <!-- LINK -->
+                <div class="info-box">
+                    <h2 data-i18n="detail_link">Liên kết</h2>
+                    <a id="detailLink" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> <span data-i18n="btn_use">Sử dụng ngay</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer_about">Giới thiệu</h3>
+                <p data-i18n="footer_about_text">THÔNG TIN AI là trang tổng hợp những công cụ AI tốt nhất giúp bạn nâng cao hiệu suất công việc.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer_contact">Liên hệ</h3>
+                <ul>
+                    <li><a href="mailto:contact@thongtinai.com">📧 contact@thongtinai.com</a></li>
+                    <li><a href="https://facebook.com/thongtinai" target="_blank">📱 Facebook</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer_legal">Pháp lý</h3>
+                <ul>
+                    <li><a href="terms.html" data-i18n="footer_terms">Điều khoản</a></li>
+                    <li><a href="privacy.html" data-i18n="footer_privacy">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom" data-i18n="footer_text">© 2026 THÔNG TIN AI</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="translations.js"></script>
+    <script src="js/detail.js"></script>
+</body>
+</html>
